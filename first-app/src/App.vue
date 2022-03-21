@@ -8,7 +8,6 @@
                   <a href="#">view more</a>
       </template>
     </HeaderNav>
-    
   </div>
 
   <div v-if="showHeaderTwo">
