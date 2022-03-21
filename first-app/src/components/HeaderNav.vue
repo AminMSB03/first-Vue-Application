@@ -1,7 +1,9 @@
 <template>
     <div class="container" @click.self="showTwo">
         <div class="popUp">
+            <!--default slot  -->
             <slot></slot>
+            <!--slot with a name -->
             <slot name="links"></slot>
         </div>
         
