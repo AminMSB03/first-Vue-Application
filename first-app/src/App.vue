@@ -21,7 +21,7 @@
   <button @click="show" >show</button>
   <button @click="showTwo" >showTwo</button>
   <button @click="count+=1">counter is: {{count}} </button>
-  <input type="email" name="" id="" v-model="email">
+  <input type="email"v-model="email">
 </template>
 
 <script>
