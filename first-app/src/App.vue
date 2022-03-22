@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ email }}</h1>
+  <!-- <h1>{{ email }}</h1> -->
   <div v-if="showHeader">
     <HeaderNav  @edit="show">
     <h1>Welcome to Header Template</h1>
@@ -8,6 +8,7 @@
                   <a href="#">view more</a>
       </template>
     </HeaderNav>
+    
   </div>
 
   <div v-if="showHeaderTwo">
@@ -20,7 +21,13 @@
   <button @click="show" >show</button>
   <button @click="showTwo" >showTwo</button>
   <button @click="count+=1">counter is: {{count}} </button>
-  <input type="email"v-model="email">
+  <input type="text" name="" id="" v-model="email" @keyup.alt="addItem">
+  <div>
+    <h4>{{ items }}</h4>
+  </div>
+  <div class="items" v-for="item in items" :key="item">
+        <span @click="deleteItem(item)">{{item}}</span>
+  </div>
 </template>
 
 <script>
@@ -33,7 +40,8 @@ export default {
       count:0 ,
       showHeader : false,
       showHeaderTwo : false,
-      email:''
+      email:'',
+      items : []
     }
   },
   components:{
@@ -46,6 +54,19 @@ export default {
     showTwo(){
       this.showHeaderTwo = !this.showHeaderTwo
     },
+    addItem(e){
+      if(e.key === "," && this.email){
+        if(!this.items.includes(this.email)){
+          this.items.push(this.email)
+        }
+        this.email = ""
+      }
+    },
+    deleteItem(item){
+        this.items = this.items.filter((e)=>{
+              return e !== item
+        })
+    }
     
 
   }
@@ -60,5 +81,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.items{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:20px ;
+  margin: 20px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
 }
 </style>
