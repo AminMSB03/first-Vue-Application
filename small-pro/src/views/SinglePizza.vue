@@ -1,8 +1,8 @@
 <template>
     <div class="pizza" v-if="pizza">
-        <!-- <h1>Demand Num° : {{ pizza.id }}</h1> -->
         <h1>Created In  : {{ pizza.date }}</h1>
         <h1>Created By  : {{ pizza.createdBy }}</h1>
+        <h1>Pizza Elements: {{ pizza.elements }}</h1>
     </div>
     <button @click="showUpdateForm">Up date</button>
     <div class="formUpdate" v-if="addPizza" @click.self="close">
