@@ -47,7 +47,6 @@ export default {
             let json = await response.json()
             return json
         },
-
         async DeletePizza(id){
             let response = await fetch('http://localhost:3000/data/API/delete.php',
             {
