@@ -1,11 +1,29 @@
 <template>
-  <nav>
+
+
+  <nav class="text-center bg-green-300 mb-10 flex flex-col md:flex-row " >
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/Pizzas">Pizza</router-link>
   </nav>
   <router-view/>
 </template>
+
+
+<script>
+import Header from './components/Header'
+
+export default ({
+  components:{
+    Header
+  },
+  setup() {
+    
+  },
+})
+</script>
+
+
 
 <style>
 #app {

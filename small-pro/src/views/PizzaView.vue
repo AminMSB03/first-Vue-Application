@@ -1,5 +1,5 @@
 <template>
-    <button @click= "close" class="addPizza">Add Pizza</button>
+    <button @click= "close" class="addPizza " >Add Pizza</button>
     
     <div class="pizza" v-for="pizza in pizzas" :key="pizza.id">
         <router-link :to="{name:'pizza' , params: {id: pizza.id}} " class="links">
