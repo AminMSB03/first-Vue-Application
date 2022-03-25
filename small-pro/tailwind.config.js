@@ -1,5 +1,5 @@
 module.exports = {
-  // mode: 'jit',
+  mode: 'jit',
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   
   theme: {
